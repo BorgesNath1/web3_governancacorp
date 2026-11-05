@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/departamento")
-public class DepartamentoController {
+public class DepartamentoRestController {
 
     @Autowired
     private DepartamentoRepository dRepository;
@@ -33,5 +33,28 @@ public class DepartamentoController {
         };
         return null;
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id){
+        this.dRepository.deleteById(id);
+    }
+
+    @DeleteMapping("/{nome}")
+    public void delete(@PathVariable String nome){
+        this.dRepository.deleteByNome(nome);
+    }
+
+    @GetMapping("/{nome}")
+    public Departamento findByNome(@PathVariable String nome){
+        Optional<Departamento> departamento = this.dRepository.findByNome(nome);
+
+        if(departamento.isPresent()){
+            return departamento.get();
+        }
+
+        return null;
+    }
+
+
 
 }
