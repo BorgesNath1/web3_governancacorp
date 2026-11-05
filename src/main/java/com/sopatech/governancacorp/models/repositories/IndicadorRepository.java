@@ -1,4 +1,7 @@
 package com.sopatech.governancacorp.models.repositories;
 
-public interface IndicadorRepository {
+import com.sopatech.governancacorp.models.entities.Indicador;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IndicadorRepository extends JpaRepository<Indicador,Integer> {
 }

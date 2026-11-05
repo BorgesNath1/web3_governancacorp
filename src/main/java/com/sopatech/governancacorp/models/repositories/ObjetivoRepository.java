@@ -1,4 +1,7 @@
 package com.sopatech.governancacorp.models.repositories;
 
-public interface ObjetivoRepository {
+import com.sopatech.governancacorp.models.entities.Objetivo;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ObjetivoRepository extends JpaRepository<Objetivo,Integer> {
 }
