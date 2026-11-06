@@ -16,12 +16,12 @@ public class MetaRestController {
     private MetaRepository mRepository;
 
     @PostMapping
-    public void create(Meta meta){
+    public void create(@RequestBody Meta meta){
         this.mRepository.save(meta);
     }
 
     @PutMapping
-    public void update(Meta meta){
+    public void update(@RequestBody Meta meta){
         this.mRepository.save(meta);
     }
 
@@ -47,7 +47,7 @@ public class MetaRestController {
 
     @GetMapping("/{nome}")
     public Meta findByNome(@PathVariable String nome){
-        Optional<Meta> meta = this.mRepository.findByName(nome);
+        Optional<Meta> meta = this.mRepository.findByNome(nome);
 
         if (meta.isPresent()){
             return meta.get();
@@ -57,7 +57,7 @@ public class MetaRestController {
 
     @DeleteMapping("/{nome}")
     public void deleteByName(@PathVariable String nome){
-        this.mRepository.DeleteByName(nome);
+        this.mRepository.deleteByNome(nome);
     }
 
 }

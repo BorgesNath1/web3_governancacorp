@@ -13,7 +13,9 @@ public class Indicador {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
+    @Enumerated(EnumType.STRING)
     private Semaforo qualidade;
+    @Enumerated(EnumType.STRING)
     private Prazo prazo;
 
     @OneToMany(cascade = CascadeType.ALL)

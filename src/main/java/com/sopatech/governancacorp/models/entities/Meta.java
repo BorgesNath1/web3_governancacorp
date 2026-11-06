@@ -16,6 +16,7 @@ public class Meta {
     private String nome;
     private String descricao;
 
+    @ManyToOne
     private Departamento departamento;
 
     @OneToMany(cascade = CascadeType.ALL)
