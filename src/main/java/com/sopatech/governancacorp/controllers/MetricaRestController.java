@@ -16,12 +16,12 @@ public class MetricaRestController {
     private MetricaRepository mRepository;
 
     @PostMapping
-    public void create(Metrica metrica){
+    public void create( @RequestBody Metrica metrica){
         this.mRepository.save(metrica);
     }
 
     @PutMapping
-    public void update(Metrica metrica){
+    public void update(@RequestBody Metrica metrica){
         this.mRepository.save(metrica);
     }
 

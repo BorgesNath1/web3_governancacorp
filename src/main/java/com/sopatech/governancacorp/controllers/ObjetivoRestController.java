@@ -16,12 +16,12 @@ public class ObjetivoRestController {
     private ObjetivoRepository oRepository;
 
     @PostMapping
-    public void create(Objetivo objetivo){
+    public void create(@RequestBody Objetivo objetivo){
         this.oRepository.save(objetivo);
     }
 
     @PutMapping
-    public void update(Objetivo objetivo){
+    public void update(@RequestBody Objetivo objetivo){
         this.oRepository.save(objetivo);
     }
 
@@ -30,9 +30,9 @@ public class ObjetivoRestController {
         this.oRepository.deleteById(id);
     }
 
-    @DeleteMapping("/{nome}")
-    public void deleteByName(@PathVariable String nome){
-        this.oRepository.deleteByName(nome);
+    @DeleteMapping("/{titulo}")
+    public void deleteByName(@PathVariable String titulo){
+        this.oRepository.deleteByTitulo(titulo);
     }
 
     @GetMapping
@@ -50,9 +50,9 @@ public class ObjetivoRestController {
         return null;
     }
 
-    @GetMapping("/{nome}")
-    public Objetivo findByName(@PathVariable String nome){
-        Optional<Objetivo> objetivo = this.oRepository.findByName(nome);
+    @GetMapping("/{titulo}")
+    public Objetivo findByName(@PathVariable String titulo){
+        Optional<Objetivo> objetivo = this.oRepository.findByTitulo(titulo);
 
         if(objetivo.isPresent()){
             return objetivo.get();

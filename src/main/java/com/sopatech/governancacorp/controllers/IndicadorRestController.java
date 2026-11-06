@@ -16,12 +16,12 @@ public class IndicadorRestController {
     private IndicadorRepository iRepository;
 
     @PostMapping
-    public void create(Indicador indicador){
+    public void create(@RequestBody Indicador indicador){
         this.iRepository.save(indicador);
     }
 
     @PutMapping
-    public void update(Indicador indicador){
+    public void update(@RequestBody Indicador indicador){
         this.iRepository.save(indicador);
     }
 

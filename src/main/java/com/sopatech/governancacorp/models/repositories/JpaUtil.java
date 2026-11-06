@@ -17,7 +17,7 @@ public class JpaUtil {
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         dataSource.setUrl(
-                "jdbc:mysql://localhost:3306/agenda?createDatabaseIfNotExist=true");
+                "jdbc:mysql://localhost:3306/governacorp?createDatabaseIfNotExist=true");
 
         return dataSource;
     }

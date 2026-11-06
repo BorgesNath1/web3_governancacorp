@@ -15,6 +15,7 @@ public class Objetivo {
     private int id;
     @Column(unique = true)
     private String titulo;
+    @Enumerated(EnumType.STRING)
     private Prazo duracao;
     private String descricao;
 
